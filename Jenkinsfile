@@ -1,35 +1,23 @@
 pipeline {
- agent any
- tools {
-  jdk 'JAVA_HOME’ 
-  maven 'M2_HOME'
- }
+    agent any
 
- stages {
+    tools {
+        jdk 'JAVA_HOME'      
+        maven 'M2_HOME'     
+    }
 
- stage('GIT') {
+    stages {
+        stage('GIT') {
+            steps {
+                git branch: 'main',   
+                    url: 'https://github.com/srarfi/Srarfi_Ridha_4SLEAM3.gitt'
+            }
+        }
 
-           steps {
-
-               git branch: 'main',
-
-               url: ' https://github.com/srarfi/Srarfi_Ridha_4SLEAM3.git'
-
-          }
-
-     }
-
- stage ('Compile Stage') {
-
- steps {
-
- sh 'mvn clean compile'
-
- }
-
- }
-
- }
-
+        stage('Compile Stage') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+    }
 }
-
