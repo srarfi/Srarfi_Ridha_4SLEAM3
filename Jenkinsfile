@@ -10,7 +10,7 @@ pipeline {
         stage('GIT') {
             steps {
                 git branch: 'main',   
-                    url: 'https://github.com/srarfi/Srarfi_Ridha_4SLEAM3.gitt'
+                    url: 'https://github.com/srarfi/Srarfi_Ridha_4SLEAM3.git'
             }
         }
 
